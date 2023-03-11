@@ -7,20 +7,20 @@ $result = mysqli_query($conn, $sql);
 
 
 if (isset($_POST['submit'])) {
-    $id = $_POST['id'];
+    $ID = $_POST['ID'];
     $name = $_POST['name'];
     $desc = $_POST['desc'];
     $date = $_POST['date'];
     $status = $_POST['status'];
 
-    echo $id;
+    echo $ID;
     echo $name;
     echo $desc;
     echo $date;
     echo $status;
 
     // Insert the user data into the database
-    $sql = "INSERT INTO tasks VALUES (null,'$name','$desc', '$date', '$status')";
+    $sql = "INSERT INTO tasks VALUES (null,'$ID','$name','$desc', '$date', '$status')";
     mysqli_query($conn, $sql);
   
   }
@@ -36,14 +36,14 @@ if (isset($_POST['submit'])) {
 
 
 <body>
-  <h1>APPLICATION RECORDS</h1>
+  <h1>TO DO LIST RECORDS</h1>
   <table border="2">
 
     <tr>
       <th>ID</th>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Due Date</th>
+      <th>Task Name</th>
+      <th>Task Description</th>
+      <th>Task Due Date</th>
       <th>Status</th>
     </tr>
 
@@ -60,7 +60,6 @@ if (isset($_POST['submit'])) {
     }
    
         ?>
-
 
   </table>
   <br>
